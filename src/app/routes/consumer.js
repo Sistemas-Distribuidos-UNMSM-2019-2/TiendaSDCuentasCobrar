@@ -10,8 +10,9 @@ try {
     const client = new kafka.KafkaClient({ 'kafkaHost': config.kafka_server });
     let consumer = new Consumer(
         client,
-        [{ topic: config.kafka_topic, partition: 0 }],
+        [{ topic: config.kafka_topic, partition: 0}],
         {
+            groupId: "cuent2N",
             autoCommit: true,
             fetchMaxWaitMs: 1000,
             fetchMaxBytes: 1024 * 1024,
